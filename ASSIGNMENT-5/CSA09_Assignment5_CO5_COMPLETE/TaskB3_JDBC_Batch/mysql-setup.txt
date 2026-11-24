@@ -1,0 +1,6 @@
+1. Execute schema.sql in MySQL.
+2. Confirm database co5_transport and table bus_pass exist.
+3. Set DB_URL=jdbc:mysql://localhost:3306/co5_transport
+4. Set DB_USER and DB_PASSWORD to your local MySQL test credentials.
+5. Download MySQL Connector/J and set MYSQL_JAR to its JAR path.
+Never upload real passwords or credentials to GitHub.

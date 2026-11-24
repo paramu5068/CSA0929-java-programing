@@ -1,0 +1,9 @@
+Add your own screenshots here (do not submit this checklist as a replacement for evidence):
+1. B1 PassStore console output showing P1003 record and null for damaged P1002.
+2. B1 buffered/unbuffered line count and benchmark timings.
+3. B2 unsafe and PreparedStatement local database output.
+4. B3 MySQL table structure and SELECT result for 10 records.
+5. B3 benchmark output for 1,000, 10,000 and 100,000 rows.
+6. B3 rollback test showing zero inserted rows after a forced failure.
+7. B4 migration rejection report and loaded-row count.
+8. B4 DatabaseMetaData output showing database and driver details.
