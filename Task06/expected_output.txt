@@ -1,0 +1,5 @@
+new ElectricCar("TN03C3") ...
+1. Vehicle constructor   (regNo set to TN03C3)
+2. Car constructor       (rate 30 /hour ready)
+3. ElectricCar constructor (charging support ready)
+ElectricCar -> Car -> Vehicle TN03C3

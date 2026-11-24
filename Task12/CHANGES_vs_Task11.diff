@@ -1,0 +1,28 @@
+Only in Task12/src/parking/app: Task12Tests.java
+Only in Task12/src/parking/model: DeliveryVan.java
+Only in Task12/src/parking/model: EBike.java
+Only in Task12/src/parking/model: OneDayPass.java
+diff -ru Task11/src/parking/service/VehicleFactory.java Task12/src/parking/service/VehicleFactory.java
+--- Task11/src/parking/service/VehicleFactory.java	2026-11-18 04:27:31.005659305 +0000
++++ Task12/src/parking/service/VehicleFactory.java	2026-11-18 04:28:38.325744743 +0000
+@@ -1,6 +1,8 @@
+ package parking.service;
+ 
+ import parking.model.Car;
++import parking.model.DeliveryVan;
++import parking.model.EBike;
+ import parking.model.ElectricCar;
+ import parking.model.TwoWheeler;
+ import parking.model.Vehicle;
+@@ -20,6 +22,11 @@
+             case "ev":
+             case "electriccar":
+                 return new ElectricCar(regNo);
++            case "ebike":
++                return new EBike(regNo);
++            case "van":
++            case "deliveryvan":
++                return new DeliveryVan(regNo);
+             default:
+                 throw new IllegalArgumentException("Unknown vehicle type: " + type);
+         }

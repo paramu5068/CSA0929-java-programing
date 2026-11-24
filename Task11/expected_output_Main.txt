@@ -1,0 +1,13 @@
+Facility: 2 floors, 5 slots
+ENTER  Ticket#1001 TwoWheeler[TN01A1] slot[0,0] in 2026-11-18T08:00
+ENTER  Ticket#1002 Car[TN02B2] slot[0,1] in 2026-11-18T09:00
+ENTER  Ticket#1003 ElectricCar[TN03C3] slot[0,2] in 2026-11-18T09:15
+ENTER  Ticket#1004 Car[TN04S4] slot[1,0] in 2026-11-18T08:00
+EXIT   TN01A1 pays Rs 30.0
+EXIT   TN02B2 pays Rs 30.0
+EXIT   TN03C3 pays Rs 240.0  (parking + 10 kWh charging)
+EXIT   TN04S4 pays Rs 0.0  (valid monthly pass)
+Total collection : Rs 300.0
+Exits by category: {STUDENT=1, VISITOR=3}
+Tickets issued   : 4
+Free slots now   : 5/5

@@ -1,0 +1,8 @@
+wrong1 (int division)      = Rs 60.0
+wrong2 (cast after divide) = Rs 60.0
+wrong3 ((int) truncation)  = Rs 60.0
+right  ((m+59)/60)         = Rs 90.0
+right  (Math.ceil)         = Rs 90.0
+(int) 3,000,000,000L       = -1294967296
+Math.toIntExact detects it : integer overflow
+0.1 + 0.2 == 0.3 ?         = false

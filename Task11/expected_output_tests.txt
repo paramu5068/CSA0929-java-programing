@@ -1,0 +1,45 @@
+| ID   | Test                                               | Expected       | Actual         | Result |
+|------|----------------------------------------------------|----------------|----------------|--------|
+| N1   | first vehicle gets floor 0 slot 0                  | [0, 0]         | [0, 0]         | PASS |
+| N2   | TwoWheeler 150 min -> 3 h x Rs10                   | 30.0           | 30.0           | PASS |
+| N3   | Car 45 min -> 1 h x Rs30                           | 30.0           | 30.0           | PASS |
+| N4   | ElectricCar 181 min -> 4 h x Rs30                  | 120.0          | 120.0          | PASS |
+| N5   | EV charging 10 kWh x Rs12                          | 120.0          | 120.0          | PASS |
+| B1   | zero-minute stay costs nothing                     | 0.0            | 0.0            | PASS |
+| B2   | exactly 60 min -> 1 hour (slab boundary)           | 30.0           | 30.0           | PASS |
+| B3   | 61 min -> 2 hours (slab boundary + 1)              | 60.0           | 60.0           | PASS |
+| B4   | 24 h exactly -> daily max Rs240                    | 240.0          | 240.0          | PASS |
+| B5   | 10 h in a day -> capped at Rs240                   | 240.0          | 240.0          | PASS |
+| B6   | 24 h 1 min -> Rs240 + 1 h                          | 270.0          | 270.0          | PASS |
+| B7   | last free slot is allocated                        | [0, 0]         | [0, 0]         | PASS |
+| B8   | facility full -> null                              | null           | null           | PASS |
+| B9   | released slot can be reused                        | [0, 0]         | [0, 0]         | PASS |
+| B10  | uniform constructor 3 x 50 = 150 slots             | 150            | 150            | PASS |
+| I1   | unknown vehicle type                               | IllegalArgumentException | IllegalArgumentException | PASS |
+| I2   | duplicate registration number                      | IllegalStateException | IllegalStateException | PASS |
+| I3   | release(5,0) invalid floor                         | false          | false          | PASS |
+| I4   | release(0,-1) invalid slot                         | false          | false          | PASS |
+| I5   | release a free slot                                | false          | false          | PASS |
+| I6   | negative duration                                  | IllegalArgumentException | IllegalArgumentException | PASS |
+| I7   | exit of a vehicle that never entered               | IllegalStateException | IllegalStateException | PASS |
+| I8   | exit time before entry time                        | IllegalArgumentException | IllegalArgumentException | PASS |
+| I9   | entry when the facility is full                    | IllegalStateException | IllegalStateException | PASS |
+| I10  | monthly pass for a visitor                         | IllegalArgumentException | IllegalArgumentException | PASS |
+| I11  | charging a non-EV                                  | IllegalArgumentException | IllegalArgumentException | PASS |
+| I12  | bad registration number                            | IllegalArgumentException | IllegalArgumentException | PASS |
+| O1   | ticket numbers are never reused                    | true           | true           | PASS |
+| O2   | copy constructor keeps the ticket number           | 1003           | 1003           | PASS |
+| O3   | copy constructor consumes no new number            | 4              | 4              | PASS |
+| O4   | Car equals ElectricCar with same regNo             | true           | true           | PASS |
+| O5   | different regNo -> not equal                       | false          | false          | PASS |
+| O6   | equal objects have equal hashCode                  | true           | true           | PASS |
+| D1   | visitor two-wheeler                                | 30.0           | 30.0           | PASS |
+| D2   | visitor car                                        | 30.0           | 30.0           | PASS |
+| D3   | visitor EV (parking + charging)                    | 240.0          | 240.0          | PASS |
+| D4   | student with valid monthly pass                    | 0.0            | 0.0            | PASS |
+| D5   | staff with expired pass pays full                  | 60.0           | 60.0           | PASS |
+| D6   | total collection (hand calc 30+30+240+0+60)        | 360.0          | 360.0          | PASS |
+| D7   | all slots free after everyone leaves               | 5              | 5              | PASS |
+| D8   | no active tickets remain                           | 0              | 0              | PASS |
+
+RESULT: 41 passed, 0 failed, 41 total
